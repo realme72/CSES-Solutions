@@ -1,0 +1,39 @@
+/*
+		@Author :- Gaurav Bharti
+		National Institute of Technology, Jamshedpur.
+*/
+ 
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int N=2e5+5;
+ll BIT[N], a[N], n, q;
+ 
+void update(ll x, ll val){
+      for(; x <= n; x += x&-x)
+        BIT[x] += val;
+}
+ 
+ll query(ll x){
+    
+     ll sum = 0;
+     for(; x > 0; x -= x&-x)
+        sum += BIT[x];
+     return sum;
+}
+ 
+int main(){
+    
+    cin >> n >> q;
+    for( ll i = 1; i <= n; i++){
+        cin >> a[i];
+           update(i, a[i]);
+     }
+     
+     while(q--){
+        ll x,y;cin >> x>>y;
+        cout << query(y) - query(x-1) <<endl;
+     }
+     
+     return 0;
+}
