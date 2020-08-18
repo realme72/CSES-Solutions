@@ -13,8 +13,9 @@ int main() {
 	dp[0] = 1;
 
 	for(int i = 1; i<=n; ++i) {
-		for (int j=1; j<=6 && (i-j)>= 0 ; ++j ){
-			dp[i] += dp[i-j];
+		for (int j=1; j<=6 ; ++j ){
+			 if ((i-j)>= 0 ) dp[i] += dp[i-j]; //the number of ways to make sum x ending with a 3 is dp[x-3].
+			//Summing over the possibilities gives dp[x] = dp[x-1] + dp[x-2] + dp[x-3] + dp[x-4] + dp[x-5] + dp[x-6].
 			dp[i] %= mod;
 		}
 	}
