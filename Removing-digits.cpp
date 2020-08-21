@@ -26,5 +26,6 @@ int main() {
 		dp[i]=min(dp[i],dp[i-d]+1);
 	}
 	cout << dp[n] << "\n";
- 
-    
+ 	
+	return 0;
+}
