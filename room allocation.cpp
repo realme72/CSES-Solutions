@@ -49,9 +49,7 @@ void solve() {
 		ans[in[i].second] = *s.begin(); 	
 		s.erase(s.begin());
 	}	
- 
-	int tot = *max_element(all(ans)) ;
-	cout << tot + 1 << "\n";
+	cout << *max_element(all(ans)) + 1 << "\n";
 	for(int i = 0 ; i < n; ++i) {
 		cout << ans[i] + 1 << " ";
 	}
