@@ -9,6 +9,8 @@ const int m = 1e9 + 7;
 const int MAX = 2e6;
 ll inv[MAX], fact[MAX], f2[MAX];
 
+// *** distributing m things among n people can be done by (n + m - ) C (n -1) ***//
+
 void fandi( ) {
 	inv[1] = 1;
 	for(int i = 2; i <= MAX; ++i) {
