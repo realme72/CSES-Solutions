@@ -7,6 +7,7 @@ using ll = long long int;
 #define all(a) a.begin(),a.end()
 #define gaurav main
 #define prec(n) fixed<<setprecision(n)
+//used kmp Algorithm(pattern - matching)
  
 void compute(string t, int m, int lps[]) {
 	int len = 0;
